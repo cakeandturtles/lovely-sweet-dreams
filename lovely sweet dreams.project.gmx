@@ -9,16 +9,38 @@
     <sound>sound\snd_blue1</sound>
   </sounds>
   <sprites name="sprites">
-    <sprite>sprites\s_greenWitchPoseBig1</sprite>
-    <sprite>sprites\s_block1</sprite>
-    <sprite>sprites\s_greenWitchPose1</sprite>
-    <sprite>sprites\s_blueWitchPose1</sprite>
-    <sprite>sprites\s_redWitchPose1</sprite>
-    <sprite>sprites\s_redWitchPoseBig1</sprite>
-    <sprite>sprites\s_greenWitchPortrait1</sprite>
-    <sprite>sprites\s_blueWitchPortrait1</sprite>
+    <sprites name="day_3">
+      <sprite>sprites\s_sword3</sprite>
+      <sprite>sprites\s_monkey3</sprite>
+    </sprites>
+    <sprites name="day_2">
+      <sprite>sprites\s_redNpcPortrait2</sprite>
+      <sprite>sprites\s_zoomTriangle</sprite>
+      <sprite>sprites\s_solidMask2</sprite>
+      <sprite>sprites\s_greenPlayerStand2</sprite>
+      <sprite>sprites\s_greenPlayerWalk2</sprite>
+      <sprite>sprites\s_redPlayerStand2</sprite>
+      <sprite>sprites\s_redPlayerWalk2</sprite>
+      <sprite>sprites\s_bluePlayerStand2</sprite>
+      <sprite>sprites\s_bluePlayerWalk2</sprite>
+      <sprite>sprites\s_redNpcStand2</sprite>
+      <sprite>sprites\s_greenNpcStand2</sprite>
+    </sprites>
+    <sprites name="day_1">
+      <sprite>sprites\s_greenWitchPoseBig1</sprite>
+      <sprite>sprites\s_block1</sprite>
+      <sprite>sprites\s_greenWitchPose1</sprite>
+      <sprite>sprites\s_redWitchPose1</sprite>
+      <sprite>sprites\s_greenWitchPortrait1</sprite>
+      <sprite>sprites\s_redWitchPoseBig1</sprite>
+      <sprite>sprites\s_blueWitchPortrait1</sprite>
+      <sprite>sprites\s_blueWitchPose1</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
+    <background>background\bg_tileset_green2</background>
+    <background>background\bg_tileset_red2</background>
+    <background>background\bg_tileset_blue2</background>
     <background>background\bg_tileset1</background>
   </backgrounds>
   <paths name="paths"/>
@@ -26,12 +48,30 @@
     <font>fonts\font_1</font>
   </fonts>
   <objects name="objects">
-    <object>objects\o_redWitch1</object>
-    <object>objects\o_greenWitch1</object>
-    <object>objects\o_blueWitch1</object>
+    <objects name="day3">
+      <object>objects\o_redNpc3</object>
+      <object>objects\o_monkey3</object>
+      <object>objects\o_light3</object>
+    </objects>
+    <objects name="day2">
+      <object>objects\o_playerBase2</object>
+      <object>objects\o_player2</object>
+      <object>objects\o_redNpc2</object>
+      <object>objects\o_blueNpc2</object>
+      <object>objects\o_triangle2</object>
+      <object>objects\o_solid2</object>
+    </objects>
+    <objects name="day_1">
+      <object>objects\o_redWitch1</object>
+      <object>objects\o_greenWitch1</object>
+      <object>objects\o_blueWitch1</object>
+    </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_2</room>
+    <room>rooms\rm_2_2</room>
     <room>rooms\rm_1</room>
+    <room>rooms\room3</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
