@@ -9,6 +9,11 @@
     <sound>sound\snd_blue1</sound>
   </sounds>
   <sprites name="sprites">
+    <sprites name="day4">
+      <sprite>sprites\s_watertop4</sprite>
+      <sprite>sprites\s_water4</sprite>
+      <sprite>sprites\s_solidMask4</sprite>
+    </sprites>
     <sprites name="day_3">
       <sprite>sprites\s_sword3</sprite>
       <sprite>sprites\s_monkey3</sprite>
@@ -43,6 +48,7 @@
     </sprites>
   </sprites>
   <backgrounds name="background">
+    <background>background\bg_tileset_red4</background>
     <background>background\bg_tileset_green2</background>
     <background>background\bg_tileset_red2</background>
     <background>background\bg_tileset_blue2</background>
@@ -57,6 +63,15 @@
     <font>fonts\font_1</font>
   </fonts>
   <objects name="objects">
+    <objects name="day4">
+      <object>objects\o_player4</object>
+      <object>objects\o_camera4</object>
+      <object>objects\o_watertop4</object>
+      <object>objects\o_water4</object>
+      <object>objects\o_solid4</object>
+      <object>objects\o_sword4</object>
+      <object>objects\o_orangeNpc4</object>
+    </objects>
     <objects name="day3">
       <object>objects\o_player3</object>
       <object>objects\o_redNpc3</object>
@@ -78,6 +93,7 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_4</room>
     <room>rooms\rm_3</room>
     <room>rooms\rm_2</room>
     <room>rooms\rm_2_2</room>
