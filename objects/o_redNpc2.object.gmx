@@ -53,30 +53,29 @@ tile_layer_show(255000000); // Show red tiles
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var player = position_meeting(self.x, self.y, o_playerBase2);
-if (player) {
+            <string>if (position_meeting(self.x, self.y, o_player2)) {
     if (!touching_player) {
-        player.stopTimer = 30;
+        o_player2.stopTimer = 30;
         audio_play_sound(snd_glitch1, 1, false);
     }
     touching_player = true;
 } else {
     if (touching_player) {
         if (color == "red") {
-            o_playerBase2.stand_sprite = s_redPlayerStand2;
-            o_playerBase2.walk_sprite = s_redPlayerWalk2;
-            o_playerBase2.terminal_yvel = 0;
-            o_playerBase2.jump_yvel = 0;
+            o_player2.stand_sprite = s_redPlayerStand2;
+            o_player2.walk_sprite = s_redPlayerWalk2;
+            o_player2.terminal_yvel = 0;
+            o_player2.jump_yvel = 0;
             color = "green";
             sprite_index = s_greenNpcStand2;
             tile_layer_show(000255000); // Show green tiles
             tile_layer_hide(255000000); // Hide red tiles
             //background_assign(bg_tileset_green2, bg_tileset1);
         } else if (color == "green") {
-            o_playerBase2.stand_sprite = s_greenPlayerStand2;
-            o_playerBase2.walk_sprite = s_greenPlayerWalk2;
-            o_playerBase2.terminal_yvel = 2;
-            o_playerBase2.jump_yvel = -8;
+            o_player2.stand_sprite = s_greenPlayerStand2;
+            o_player2.walk_sprite = s_greenPlayerWalk2;
+            o_player2.terminal_yvel = 2;
+            o_player2.jump_yvel = -8;
             color = "red";
             sprite_index = s_redNpcStand2;
             tile_layer_hide(000255000); // Hide green tiles

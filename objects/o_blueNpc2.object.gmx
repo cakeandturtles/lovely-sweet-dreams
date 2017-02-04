@@ -50,18 +50,18 @@ deactivated = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (position_meeting(self.x, self.y, o_playerBase2)) {
+            <string>if (position_meeting(self.x, self.y, o_player2)) {
     if (!touching_player) {
-        o_playerBase2.stopTimer = 30;
+        o_player2.stopTimer = 30;
         audio_play_sound(snd_blue1, 1, false);
     }
     touching_player = true;
 } else {
     if (touching_player &amp;&amp; !deactivated) {
-        o_playerBase2.stand_sprite = s_bluePlayerStand2;
-        o_playerBase2.walk_sprite = s_bluePlayerWalk2;
-        o_playerBase2.terminal_yvel = 5;
-        o_playerBase2.jump_yvel = -5;
+        o_player2.stand_sprite = s_bluePlayerStand2;
+        o_player2.walk_sprite = s_bluePlayerWalk2;
+        o_player2.terminal_yvel = 5;
+        o_player2.jump_yvel = -5;
         tile_layer_hide(000255000); // Hide green tiles
         tile_layer_hide(255000000); // Hide red tiles
         tile_layer_show(000000255); // Show blue tiles

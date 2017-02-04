@@ -26,14 +26,17 @@
           <argument>
             <kind>1</kind>
             <string>stopTimer = 0;
+horizontal_input = false;
 yvel = 0;
 grav = 0.5;
 terminal_yvel = 2;
-jump_yvel = -8;
+jump_yvel = -7;
 on_ground = false;
+color = "green";
 
 stand_sprite = s_greenPlayerStand2;
 walk_sprite = s_greenPlayerWalk2;
+jump_sprite = s_greenPlayerJump3;
 
 image_speed = 0.1;
 </string>
@@ -59,24 +62,19 @@ image_speed = 0.1;
           <argument>
             <kind>1</kind>
             <string>stopTimer -= 1;
+horizontal_input = false;
 if (stopTimer &lt;= 0) {
     var spd = 2;
     if (keyboard_check(vk_right)) {
         x += spd;
-        sprite_index = walk_sprite;
-        image_speed = 0.1;
+        horizontal_input = true;
         image_xscale = 1;
     }
     else if (keyboard_check(vk_left)) {
         x -= spd;
-        sprite_index = walk_sprite;
-        image_speed = 0.1;
+        horizontal_input = true;
         image_xscale = -1;
-    } else {
-        sprite_index = stand_sprite;
     }
-} else {
-    sprite_index = stand_sprite;
 }
 
 yvel += grav;
@@ -91,6 +89,16 @@ if (solid_obj) {
     on_ground = false
 }
 y += yvel;
+
+
+// set sprite_index based on state
+if (!on_ground &amp;&amp; color != "red") {
+    sprite_index = jump_sprite;
+} else if (horizontal_input) {
+    sprite_index = walk_sprite;
+} else {
+    sprite_index = stand_sprite;
+}
 </string>
           </argument>
         </arguments>
