@@ -9,6 +9,15 @@
     <sound>sound\snd_blue1</sound>
   </sounds>
   <sprites name="sprites">
+    <sprites name="day 5">
+      <sprite>sprites\s_playerDown5</sprite>
+      <sprite>sprites\s_playerSide5</sprite>
+      <sprite>sprites\s_playerUp5</sprite>
+      <sprite>sprites\s_playerSideDown5</sprite>
+      <sprite>sprites\s_playerSideUp5</sprite>
+      <sprite>sprites\s_npc5</sprite>
+      <sprite>sprites\s_bepsi5</sprite>
+    </sprites>
     <sprites name="day4">
       <sprite>sprites\s_watertop4</sprite>
       <sprite>sprites\s_water4</sprite>
@@ -56,13 +65,26 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\script_lightMeUp3.gml</script>
-    <script>scripts\script_drawSurroundingRect3.gml</script>
+    <scripts name="day5">
+      <script>scripts\script_horizontalCollisions5.gml</script>
+      <script>scripts\script_verticalCollisions5.gml</script>
+      <script>scripts\script_split5.gml</script>
+    </scripts>
+    <scripts name="day3">
+      <script>scripts\script_lightMeUp3.gml</script>
+      <script>scripts\script_drawSurroundingRect3.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_1</font>
   </fonts>
   <objects name="objects">
+    <objects name="day5">
+      <object>objects\o_player5</object>
+      <object>objects\o_camera5</object>
+      <object>objects\o_npc5</object>
+      <object>objects\o_bepsi5</object>
+    </objects>
     <objects name="day4">
       <object>objects\o_player4</object>
       <object>objects\o_camera4</object>
@@ -93,6 +115,7 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_5</room>
     <room>rooms\rm_4</room>
     <room>rooms\rm_3</room>
     <room>rooms\rm_2</room>
