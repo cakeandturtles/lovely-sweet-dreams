@@ -9,6 +9,9 @@
     <sound>sound\snd_blue1</sound>
   </sounds>
   <sprites name="sprites">
+    <sprites name="day6">
+      <sprite>sprites\s_teleport6</sprite>
+    </sprites>
     <sprites name="day 5">
       <sprite>sprites\s_playerDown5</sprite>
       <sprite>sprites\s_playerSide5</sprite>
@@ -57,6 +60,8 @@
     </sprites>
   </sprites>
   <backgrounds name="background">
+    <background>background\bg_160120_6</background>
+    <background>background\bg_overworld_tileset_6</background>
     <background>background\bg_tileset_red4</background>
     <background>background\bg_tileset_green2</background>
     <background>background\bg_tileset_red2</background>
@@ -79,6 +84,10 @@
     <font>fonts\font_1</font>
   </fonts>
   <objects name="objects">
+    <objects name="day6">
+      <object>objects\o_camera6</object>
+      <object>objects\o_teleport6</object>
+    </objects>
     <objects name="day5">
       <object>objects\o_player5</object>
       <object>objects\o_camera5</object>
@@ -115,6 +124,7 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_6</room>
     <room>rooms\rm_5</room>
     <room>rooms\rm_4</room>
     <room>rooms\rm_3</room>
