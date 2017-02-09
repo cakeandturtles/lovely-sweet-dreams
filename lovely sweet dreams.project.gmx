@@ -5,10 +5,25 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound">
-    <sound>sound\snd_glitch1</sound>
-    <sound>sound\snd_blue1</sound>
+    <sounds name="day8">
+      <sound>sound\snd_ambience8</sound>
+      <sound>sound\snd_bird1_8</sound>
+      <sound>sound\snd_bird2_8</sound>
+      <sound>sound\snd_crow8</sound>
+      <sound>sound\snd_cricket1_8</sound>
+      <sound>sound\snd_cricket2_8</sound>
+      <sound>sound\snd_cricket3_8</sound>
+    </sounds>
+    <sounds name="day1">
+      <sound>sound\snd_glitch1</sound>
+      <sound>sound\snd_blue1</sound>
+    </sounds>
   </sounds>
   <sprites name="sprites">
+    <sprites name="day8">
+      <sprite>sprites\s_playerDown_grey8</sprite>
+      <sprite>sprites\s_table8</sprite>
+    </sprites>
     <sprites name="day7">
       <sprite>sprites\s_npc_grey7</sprite>
       <sprite>sprites\s_npc_blue7</sprite>
@@ -66,6 +81,7 @@
     </sprites>
   </sprites>
   <backgrounds name="background">
+    <background>background\bg_8</background>
     <background>background\bg_160120_6</background>
     <background>background\bg_overworld_tileset_6</background>
     <background>background\bg_tileset_red4</background>
@@ -91,6 +107,11 @@
     <font>fonts\font_1</font>
   </fonts>
   <objects name="objects">
+    <objects name="day8">
+      <object>objects\o_player8</object>
+      <object>objects\o_table</object>
+      <object>objects\o_cutscene8</object>
+    </objects>
     <objects name="day7">
       <object>objects\o_player7</object>
       <object>objects\o_npc7</object>
@@ -137,6 +158,7 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_8</room>
     <room>rooms\rm_7</room>
     <room>rooms\rm_6</room>
     <room>rooms\rm_5</room>
