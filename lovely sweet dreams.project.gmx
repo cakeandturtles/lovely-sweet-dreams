@@ -5,6 +5,11 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound">
+    <sounds name="day9">
+      <sound>sound\snd_jump9</sound>
+      <sound>sound\snd_land9</sound>
+      <sound>sound\snd_stairs9</sound>
+    </sounds>
     <sounds name="day8">
       <sound>sound\snd_ambience8</sound>
       <sound>sound\snd_bird1_8</sound>
@@ -20,6 +25,9 @@
     </sounds>
   </sounds>
   <sprites name="sprites">
+    <sprites name="day9">
+      <sprite>sprites\s_redPlayerJump9</sprite>
+    </sprites>
     <sprites name="day8">
       <sprite>sprites\s_playerDown_grey8</sprite>
       <sprite>sprites\s_table8</sprite>
@@ -50,8 +58,8 @@
     <sprites name="day_3">
       <sprite>sprites\s_sword3</sprite>
       <sprite>sprites\s_monkey3</sprite>
-      <sprite>sprites\s_greenPlayerJump3</sprite>
       <sprite>sprites\s_redNpc3</sprite>
+      <sprite>sprites\s_greenPlayerJump3</sprite>
       <sprite>sprites\s_greenNpc3</sprite>
       <sprite>sprites\s_orangeNpc3</sprite>
       <sprite>sprites\s_orangeWitchPortrait3</sprite>
@@ -81,6 +89,7 @@
     </sprites>
   </sprites>
   <backgrounds name="background">
+    <background>background\bg_grey_tileset9</background>
     <background>background\bg_8</background>
     <background>background\bg_160120_6</background>
     <background>background\bg_overworld_tileset_6</background>
@@ -92,6 +101,11 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
+    <scripts name="day9">
+      <script>scripts\nullscript9.gml</script>
+      <script>scripts\script_tele_playerRpgToPlatformer9.gml</script>
+      <script>scripts\script_tele_playerPlatformerToRpg9.gml</script>
+    </scripts>
     <scripts name="day5">
       <script>scripts\script_horizontalCollisions5.gml</script>
       <script>scripts\script_verticalCollisions5.gml</script>
@@ -107,6 +121,12 @@
     <font>fonts\font_1</font>
   </fonts>
   <objects name="objects">
+    <objects name="day9">
+      <object>objects\o_player9</object>
+      <object>objects\o_teleport9</object>
+      <object>objects\o_ambience9</object>
+      <object>objects\o_camera9</object>
+    </objects>
     <objects name="day8">
       <object>objects\o_player8</object>
       <object>objects\o_table</object>
@@ -158,6 +178,7 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_9</room>
     <room>rooms\rm_8</room>
     <room>rooms\rm_7</room>
     <room>rooms\rm_6</room>
