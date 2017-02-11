@@ -25,6 +25,13 @@
     </sounds>
   </sounds>
   <sprites name="sprites">
+    <sprites name="day10">
+      <sprite>sprites\s_face_smile10</sprite>
+      <sprite>sprites\s_face_frown10</sprite>
+      <sprite>sprites\s_face10</sprite>
+      <sprite>sprites\s_body10</sprite>
+      <sprite>sprites\s_options10</sprite>
+    </sprites>
     <sprites name="day9">
       <sprite>sprites\s_redPlayerJump9</sprite>
     </sprites>
@@ -121,6 +128,11 @@
     <font>fonts\font_1</font>
   </fonts>
   <objects name="objects">
+    <objects name="day10">
+      <object>objects\o_face10</object>
+      <object>objects\o_body10</object>
+      <object>objects\o_options10</object>
+    </objects>
     <objects name="day9">
       <object>objects\o_player9</object>
       <object>objects\o_teleport9</object>
@@ -178,6 +190,8 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_battle_10</room>
+    <room>rooms\rm_overworld10</room>
     <room>rooms\rm_9</room>
     <room>rooms\rm_8</room>
     <room>rooms\rm_7</room>
