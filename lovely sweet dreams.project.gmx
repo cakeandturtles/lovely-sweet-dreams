@@ -5,6 +5,11 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound">
+    <sounds name="day12">
+      <sound>sound\snd_CM_12</sound>
+      <sound>sound\snd_flutesolo12</sound>
+      <sound>sound\snd_cavehell12</sound>
+    </sounds>
     <sounds name="day9">
       <sound>sound\snd_jump9</sound>
       <sound>sound\snd_land9</sound>
@@ -25,6 +30,18 @@
     </sounds>
   </sounds>
   <sprites name="sprites">
+    <sprites name="day12">
+      <sprite>sprites\s_CM12</sprite>
+      <sprite>sprites\s_cat12</sprite>
+      <sprite>sprites\s_coolman12</sprite>
+    </sprites>
+    <sprites name="day11">
+      <sprite>sprites\s_wall11</sprite>
+      <sprite>sprites\s_floor11</sprite>
+      <sprite>sprites\s_ceiling11</sprite>
+      <sprite>sprites\s_playerUp11</sprite>
+      <sprite>sprites\s_playerMask11</sprite>
+    </sprites>
     <sprites name="day10">
       <sprite>sprites\s_face_smile10</sprite>
       <sprite>sprites\s_face_frown10</sprite>
@@ -128,6 +145,16 @@
     <font>fonts\font_1</font>
   </fonts>
   <objects name="objects">
+    <objects name="day12">
+      <object>objects\o_player12</object>
+      <object>objects\o_npc12</object>
+    </objects>
+    <objects name="day11">
+      <object>objects\o_player11</object>
+      <object>objects\o_wall11</object>
+      <object>objects\o_totem11</object>
+      <object>objects\o_celing_and_floor11</object>
+    </objects>
     <objects name="day10">
       <object>objects\o_face10</object>
       <object>objects\o_body10</object>
@@ -190,8 +217,9 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_soundtest_12</room>
+    <room>rooms\rm_11</room>
     <room>rooms\rm_battle_10</room>
-    <room>rooms\rm_overworld10</room>
     <room>rooms\rm_9</room>
     <room>rooms\rm_8</room>
     <room>rooms\rm_7</room>
