@@ -30,6 +30,9 @@
     </sounds>
   </sounds>
   <sprites name="sprites">
+    <sprites name="day13">
+      <sprite>sprites\s_greyNpcPortrait13</sprite>
+    </sprites>
     <sprites name="day12">
       <sprite>sprites\s_CM12</sprite>
       <sprite>sprites\s_cat12</sprite>
@@ -113,6 +116,9 @@
     </sprites>
   </sprites>
   <backgrounds name="background">
+    <background>background\bg_tileset_green13</background>
+    <background>background\bg_overlay13</background>
+    <background>background\bg_dgwar13</background>
     <background>background\bg_grey_tileset9</background>
     <background>background\bg_8</background>
     <background>background\bg_160120_6</background>
@@ -125,6 +131,7 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
+    <script>scripts\script_teleport_playerRpgToPlatformer13.gml</script>
     <scripts name="day9">
       <script>scripts\nullscript9.gml</script>
       <script>scripts\script_tele_playerRpgToPlatformer9.gml</script>
@@ -145,6 +152,9 @@
     <font>fonts\font_1</font>
   </fonts>
   <objects name="objects">
+    <objects name="day13">
+      <object>objects\o_npc13</object>
+    </objects>
     <objects name="day12">
       <object>objects\o_player12</object>
       <object>objects\o_npc12</object>
@@ -217,6 +227,7 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm13</room>
     <room>rooms\rm_soundtest_12</room>
     <room>rooms\rm_11</room>
     <room>rooms\rm_battle_10</room>
