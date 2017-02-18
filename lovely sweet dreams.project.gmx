@@ -5,6 +5,8 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound">
+    <sound>sound\snd_jump</sound>
+    <sound>sound\snd_land</sound>
     <sounds name="day12">
       <sound>sound\snd_CM_12</sound>
       <sound>sound\snd_flutesolo12</sound>
@@ -30,121 +32,146 @@
     </sounds>
   </sounds>
   <sprites name="sprites">
-    <sprites name="day13">
-      <sprite>sprites\s_greyNpcPortrait13</sprite>
-    </sprites>
-    <sprites name="day12">
-      <sprite>sprites\s_CM12</sprite>
-      <sprite>sprites\s_cat12</sprite>
-      <sprite>sprites\s_coolman12</sprite>
-    </sprites>
-    <sprites name="day11">
-      <sprite>sprites\s_wall11</sprite>
-      <sprite>sprites\s_floor11</sprite>
-      <sprite>sprites\s_ceiling11</sprite>
-      <sprite>sprites\s_playerUp11</sprite>
-      <sprite>sprites\s_playerMask11</sprite>
-    </sprites>
-    <sprites name="day10">
-      <sprite>sprites\s_face_smile10</sprite>
-      <sprite>sprites\s_face_frown10</sprite>
-      <sprite>sprites\s_face10</sprite>
-      <sprite>sprites\s_body10</sprite>
-      <sprite>sprites\s_options10</sprite>
-    </sprites>
-    <sprites name="day9">
-      <sprite>sprites\s_redPlayerJump9</sprite>
-    </sprites>
-    <sprites name="day8">
-      <sprite>sprites\s_playerDown_grey8</sprite>
-      <sprite>sprites\s_table8</sprite>
-    </sprites>
-    <sprites name="day7">
-      <sprite>sprites\s_npc_grey7</sprite>
-      <sprite>sprites\s_npc_blue7</sprite>
-      <sprite>sprites\s_peppy_green7</sprite>
-      <sprite>sprites\s_peppy_grey7</sprite>
-    </sprites>
-    <sprites name="day6">
-      <sprite>sprites\s_teleport6</sprite>
-    </sprites>
-    <sprites name="day 5">
-      <sprite>sprites\s_playerDown5</sprite>
-      <sprite>sprites\s_playerSide5</sprite>
-      <sprite>sprites\s_playerUp5</sprite>
-      <sprite>sprites\s_playerSideDown5</sprite>
-      <sprite>sprites\s_playerSideUp5</sprite>
-      <sprite>sprites\s_npc5</sprite>
-      <sprite>sprites\s_bepsi5</sprite>
-    </sprites>
-    <sprites name="day4">
-      <sprite>sprites\s_watertop4</sprite>
-      <sprite>sprites\s_water4</sprite>
-      <sprite>sprites\s_solidMask4</sprite>
-    </sprites>
-    <sprites name="day_3">
-      <sprite>sprites\s_sword3</sprite>
-      <sprite>sprites\s_monkey3</sprite>
-      <sprite>sprites\s_redNpc3</sprite>
-      <sprite>sprites\s_greenPlayerJump3</sprite>
-      <sprite>sprites\s_greenNpc3</sprite>
-      <sprite>sprites\s_orangeNpc3</sprite>
-      <sprite>sprites\s_orangeWitchPortrait3</sprite>
-    </sprites>
-    <sprites name="day_2">
-      <sprite>sprites\s_redNpcPortrait2</sprite>
-      <sprite>sprites\s_zoomTriangle</sprite>
-      <sprite>sprites\s_solidMask2</sprite>
-      <sprite>sprites\s_greenPlayerStand2</sprite>
-      <sprite>sprites\s_greenPlayerWalk2</sprite>
-      <sprite>sprites\s_redPlayerStand2</sprite>
-      <sprite>sprites\s_redPlayerWalk2</sprite>
-      <sprite>sprites\s_bluePlayerStand2</sprite>
-      <sprite>sprites\s_bluePlayerWalk2</sprite>
-      <sprite>sprites\s_redNpcStand2</sprite>
-      <sprite>sprites\s_greenNpcStand2</sprite>
-    </sprites>
-    <sprites name="day_1">
-      <sprite>sprites\s_greenWitchPoseBig1</sprite>
-      <sprite>sprites\s_block1</sprite>
-      <sprite>sprites\s_greenWitchPose1</sprite>
-      <sprite>sprites\s_redWitchPose1</sprite>
-      <sprite>sprites\s_greenWitchPortrait1</sprite>
-      <sprite>sprites\s_redWitchPoseBig1</sprite>
-      <sprite>sprites\s_blueWitchPortrait1</sprite>
-      <sprite>sprites\s_blueWitchPose1</sprite>
+    <sprite>sprites\s_playerStand_red</sprite>
+    <sprite>sprites\s_playerWalk_red</sprite>
+    <sprite>sprites\s_playerJump_red</sprite>
+    <sprite>sprites\s_playerStand_grey</sprite>
+    <sprite>sprites\s_playerSleep_grey</sprite>
+    <sprite>sprites\s_npc_orange</sprite>
+    <sprite>sprites\s_npc_portrait_orange</sprite>
+    <sprite>sprites\s_npc_grey</sprite>
+    <sprite>sprites\s_npc_portrait_grey</sprite>
+    <sprites name="prev">
+      <sprites name="day13">
+        <sprite>sprites\s_greyNpcPortrait13</sprite>
+      </sprites>
+      <sprites name="day12">
+        <sprite>sprites\s_CM12</sprite>
+        <sprite>sprites\s_cat12</sprite>
+        <sprite>sprites\s_coolman12</sprite>
+      </sprites>
+      <sprites name="day11">
+        <sprite>sprites\s_wall11</sprite>
+        <sprite>sprites\s_floor11</sprite>
+        <sprite>sprites\s_ceiling11</sprite>
+        <sprite>sprites\s_playerUp11</sprite>
+        <sprite>sprites\s_playerMask11</sprite>
+      </sprites>
+      <sprites name="day10">
+        <sprite>sprites\s_face_smile10</sprite>
+        <sprite>sprites\s_face_frown10</sprite>
+        <sprite>sprites\s_face10</sprite>
+        <sprite>sprites\s_body10</sprite>
+        <sprite>sprites\s_options10</sprite>
+      </sprites>
+      <sprites name="day9">
+        <sprite>sprites\s_redPlayerJump9</sprite>
+      </sprites>
+      <sprites name="day8">
+        <sprite>sprites\s_playerDown_grey8</sprite>
+        <sprite>sprites\s_table8</sprite>
+      </sprites>
+      <sprites name="day7">
+        <sprite>sprites\s_npc_grey7</sprite>
+        <sprite>sprites\s_npc_blue7</sprite>
+        <sprite>sprites\s_peppy_green7</sprite>
+        <sprite>sprites\s_peppy_grey7</sprite>
+      </sprites>
+      <sprites name="day6">
+        <sprite>sprites\s_teleport6</sprite>
+      </sprites>
+      <sprites name="day 5">
+        <sprite>sprites\s_playerDown5</sprite>
+        <sprite>sprites\s_playerSide5</sprite>
+        <sprite>sprites\s_playerUp5</sprite>
+        <sprite>sprites\s_playerSideDown5</sprite>
+        <sprite>sprites\s_playerSideUp5</sprite>
+        <sprite>sprites\s_npc5</sprite>
+        <sprite>sprites\s_bepsi5</sprite>
+      </sprites>
+      <sprites name="day4">
+        <sprite>sprites\s_watertop4</sprite>
+        <sprite>sprites\s_water4</sprite>
+        <sprite>sprites\s_solidMask4</sprite>
+      </sprites>
+      <sprites name="day_3">
+        <sprite>sprites\s_sword3</sprite>
+        <sprite>sprites\s_monkey3</sprite>
+        <sprite>sprites\s_redNpc3</sprite>
+        <sprite>sprites\s_greenPlayerJump3</sprite>
+        <sprite>sprites\s_greenNpc3</sprite>
+        <sprite>sprites\s_orangeNpc3</sprite>
+        <sprite>sprites\s_orangeWitchPortrait3</sprite>
+      </sprites>
+      <sprites name="day_2">
+        <sprite>sprites\s_redNpcPortrait2</sprite>
+        <sprite>sprites\s_zoomTriangle</sprite>
+        <sprite>sprites\s_solidMask2</sprite>
+        <sprite>sprites\s_greenPlayerStand2</sprite>
+        <sprite>sprites\s_greenPlayerWalk2</sprite>
+        <sprite>sprites\s_redPlayerStand2</sprite>
+        <sprite>sprites\s_redPlayerWalk2</sprite>
+        <sprite>sprites\s_bluePlayerStand2</sprite>
+        <sprite>sprites\s_bluePlayerWalk2</sprite>
+        <sprite>sprites\s_redNpcStand2</sprite>
+        <sprite>sprites\s_greenNpcStand2</sprite>
+      </sprites>
+      <sprites name="day_1">
+        <sprite>sprites\s_greenWitchPoseBig1</sprite>
+        <sprite>sprites\s_block1</sprite>
+        <sprite>sprites\s_greenWitchPose1</sprite>
+        <sprite>sprites\s_redWitchPose1</sprite>
+        <sprite>sprites\s_greenWitchPortrait1</sprite>
+        <sprite>sprites\s_redWitchPoseBig1</sprite>
+        <sprite>sprites\s_blueWitchPortrait1</sprite>
+        <sprite>sprites\s_blueWitchPose1</sprite>
+      </sprites>
     </sprites>
   </sprites>
   <backgrounds name="background">
-    <background>background\bg_tileset_green13</background>
-    <background>background\bg_overlay13</background>
-    <background>background\bg_dgwar13</background>
-    <background>background\bg_grey_tileset9</background>
-    <background>background\bg_8</background>
-    <background>background\bg_160120_6</background>
-    <background>background\bg_overworld_tileset_6</background>
-    <background>background\bg_tileset_red4</background>
-    <background>background\bg_tileset_green2</background>
-    <background>background\bg_tileset_red2</background>
-    <background>background\bg_tileset_blue2</background>
-    <background>background\bg_tileset1</background>
+    <background>background\bg_overlay</background>
+    <background>background\bg_ts_dungeon_grey</background>
+    <background>background\bg_ts_dungeon_green</background>
+    <backgrounds name="prev">
+      <background>background\bg_8</background>
+      <background>background\bg_overworld_tileset_6</background>
+      <background>background\bg_tileset1</background>
+      <background>background\bg_tileset_blue2</background>
+      <background>background\bg_tileset_red2</background>
+      <background>background\bg_tileset_green2</background>
+      <background>background\bg_tileset_red4</background>
+      <background>background\bg_160120_6</background>
+      <background>background\bg_grey_tileset9</background>
+      <background>background\bg_dgwar13</background>
+      <background>background\bg_overlay13</background>
+      <background>background\bg_tileset_green13</background>
+    </backgrounds>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\script_teleport_playerRpgToPlatformer13.gml</script>
-    <scripts name="day9">
-      <script>scripts\nullscript9.gml</script>
-      <script>scripts\script_tele_playerRpgToPlatformer9.gml</script>
-      <script>scripts\script_tele_playerPlatformerToRpg9.gml</script>
+    <script>scripts\nullscript.gml</script>
+    <script>scripts\script_horizontalCollisions.gml</script>
+    <script>scripts\script_verticalCollisions.gml</script>
+    <script>scripts\script_split.gml</script>
+    <scripts name="npc_scripts">
+      <script>scripts\script_introToOverworld.gml</script>
     </scripts>
-    <scripts name="day5">
-      <script>scripts\script_horizontalCollisions5.gml</script>
-      <script>scripts\script_verticalCollisions5.gml</script>
-      <script>scripts\script_split5.gml</script>
-    </scripts>
-    <scripts name="day3">
-      <script>scripts\script_lightMeUp3.gml</script>
-      <script>scripts\script_drawSurroundingRect3.gml</script>
+    <scripts name="prev">
+      <script>scripts\script_teleport_playerRpgToPlatformer13.gml</script>
+      <scripts name="day9">
+        <script>scripts\nullscript9.gml</script>
+        <script>scripts\script_tele_playerRpgToPlatformer9.gml</script>
+        <script>scripts\script_tele_playerPlatformerToRpg9.gml</script>
+      </scripts>
+      <scripts name="day5">
+        <script>scripts\script_horizontalCollisions5.gml</script>
+        <script>scripts\script_verticalCollisions5.gml</script>
+        <script>scripts\script_split5.gml</script>
+      </scripts>
+      <scripts name="day3">
+        <script>scripts\script_lightMeUp3.gml</script>
+        <script>scripts\script_drawSurroundingRect3.gml</script>
+      </scripts>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -152,95 +179,109 @@
     <font>fonts\font_1</font>
   </fonts>
   <objects name="objects">
-    <objects name="day13">
-      <object>objects\o_npc13</object>
+    <objects name="player">
+      <object>objects\o_player</object>
     </objects>
-    <objects name="day12">
-      <object>objects\o_player12</object>
-      <object>objects\o_npc12</object>
-    </objects>
-    <objects name="day11">
-      <object>objects\o_player11</object>
-      <object>objects\o_wall11</object>
-      <object>objects\o_totem11</object>
-      <object>objects\o_celing_and_floor11</object>
-    </objects>
-    <objects name="day10">
-      <object>objects\o_face10</object>
-      <object>objects\o_body10</object>
-      <object>objects\o_options10</object>
-    </objects>
-    <objects name="day9">
-      <object>objects\o_player9</object>
-      <object>objects\o_teleport9</object>
-      <object>objects\o_ambience9</object>
-      <object>objects\o_camera9</object>
-    </objects>
-    <objects name="day8">
-      <object>objects\o_player8</object>
-      <object>objects\o_table</object>
-      <object>objects\o_cutscene8</object>
-    </objects>
-    <objects name="day7">
-      <object>objects\o_player7</object>
-      <object>objects\o_npc7</object>
-      <object>objects\o_peppy7</object>
-      <object>objects\o_camera7</object>
-    </objects>
-    <objects name="day6">
-      <object>objects\o_camera6</object>
-      <object>objects\o_teleport6</object>
-    </objects>
-    <objects name="day5">
-      <object>objects\o_player5</object>
-      <object>objects\o_camera5</object>
-      <object>objects\o_npc5</object>
-      <object>objects\o_bepsi5</object>
-    </objects>
-    <objects name="day4">
-      <object>objects\o_player4</object>
-      <object>objects\o_camera4</object>
-      <object>objects\o_watertop4</object>
-      <object>objects\o_water4</object>
-      <object>objects\o_solid4</object>
-      <object>objects\o_sword4</object>
-      <object>objects\o_orangeNpc4</object>
-    </objects>
-    <objects name="day3">
-      <object>objects\o_player3</object>
-      <object>objects\o_redNpc3</object>
-      <object>objects\o_orangeNpc3</object>
-      <object>objects\o_triangle3</object>
-      <object>objects\o_light3</object>
-    </objects>
-    <objects name="day2">
-      <object>objects\o_player2</object>
-      <object>objects\o_redNpc2</object>
-      <object>objects\o_blueNpc2</object>
-      <object>objects\o_triangle2</object>
-      <object>objects\o_solid2</object>
-    </objects>
-    <objects name="day_1">
-      <object>objects\o_redWitch1</object>
-      <object>objects\o_greenWitch1</object>
-      <object>objects\o_blueWitch1</object>
+    <object>objects\o_npc</object>
+    <object>objects\o_camera</object>
+    <object>objects\o_teleport</object>
+    <object>objects\o_ambience</object>
+    <object>objects\o_solid</object>
+    <objects name="prev">
+      <objects name="day13">
+        <object>objects\o_npc13</object>
+      </objects>
+      <objects name="day12">
+        <object>objects\o_player12</object>
+        <object>objects\o_npc12</object>
+      </objects>
+      <objects name="day11">
+        <object>objects\o_player11</object>
+        <object>objects\o_wall11</object>
+        <object>objects\o_totem11</object>
+        <object>objects\o_celing_and_floor11</object>
+      </objects>
+      <objects name="day10">
+        <object>objects\o_face10</object>
+        <object>objects\o_body10</object>
+        <object>objects\o_options10</object>
+      </objects>
+      <objects name="day9">
+        <object>objects\o_player9</object>
+        <object>objects\o_teleport9</object>
+        <object>objects\o_ambience9</object>
+        <object>objects\o_camera9</object>
+      </objects>
+      <objects name="day8">
+        <object>objects\o_player8</object>
+        <object>objects\o_table</object>
+        <object>objects\o_cutscene8</object>
+      </objects>
+      <objects name="day7">
+        <object>objects\o_player7</object>
+        <object>objects\o_npc7</object>
+        <object>objects\o_peppy7</object>
+        <object>objects\o_camera7</object>
+      </objects>
+      <objects name="day6">
+        <object>objects\o_camera6</object>
+        <object>objects\o_teleport6</object>
+      </objects>
+      <objects name="day5">
+        <object>objects\o_player5</object>
+        <object>objects\o_camera5</object>
+        <object>objects\o_npc5</object>
+        <object>objects\o_bepsi5</object>
+      </objects>
+      <objects name="day4">
+        <object>objects\o_player4</object>
+        <object>objects\o_camera4</object>
+        <object>objects\o_watertop4</object>
+        <object>objects\o_water4</object>
+        <object>objects\o_solid4</object>
+        <object>objects\o_sword4</object>
+        <object>objects\o_orangeNpc4</object>
+      </objects>
+      <objects name="day3">
+        <object>objects\o_player3</object>
+        <object>objects\o_redNpc3</object>
+        <object>objects\o_orangeNpc3</object>
+        <object>objects\o_triangle3</object>
+        <object>objects\o_light3</object>
+      </objects>
+      <objects name="day2">
+        <object>objects\o_player2</object>
+        <object>objects\o_redNpc2</object>
+        <object>objects\o_blueNpc2</object>
+        <object>objects\o_triangle2</object>
+        <object>objects\o_solid2</object>
+      </objects>
+      <objects name="day_1">
+        <object>objects\o_redWitch1</object>
+        <object>objects\o_greenWitch1</object>
+        <object>objects\o_blueWitch1</object>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm13</room>
-    <room>rooms\rm_soundtest_12</room>
-    <room>rooms\rm_11</room>
-    <room>rooms\rm_battle_10</room>
-    <room>rooms\rm_9</room>
-    <room>rooms\rm_8</room>
-    <room>rooms\rm_7</room>
-    <room>rooms\rm_6</room>
-    <room>rooms\rm_5</room>
-    <room>rooms\rm_4</room>
-    <room>rooms\rm_3</room>
-    <room>rooms\rm_2</room>
-    <room>rooms\rm_2_2</room>
-    <room>rooms\rm_1</room>
+    <room>rooms\rm_intro</room>
+    <room>rooms\rm_overworld</room>
+    <rooms name="prev">
+      <room>rooms\rm13</room>
+      <room>rooms\rm_soundtest_12</room>
+      <room>rooms\rm_11</room>
+      <room>rooms\rm_battle_10</room>
+      <room>rooms\rm_9</room>
+      <room>rooms\rm_8</room>
+      <room>rooms\rm_7</room>
+      <room>rooms\rm_6</room>
+      <room>rooms\rm_5</room>
+      <room>rooms\rm_4</room>
+      <room>rooms\rm_3</room>
+      <room>rooms\rm_2</room>
+      <room>rooms\rm_2_2</room>
+      <room>rooms\rm_1</room>
+    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
