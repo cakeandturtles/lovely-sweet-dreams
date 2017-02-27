@@ -7,6 +7,10 @@
   <sounds name="sound">
     <sound>sound\snd_jump</sound>
     <sound>sound\snd_land</sound>
+    <sound>sound\snd_hurt</sound>
+    <sound>sound\snd_checkpoint</sound>
+    <sound>sound\snd_frogskater_song</sound>
+    <sound>sound\snd_ridefrog</sound>
     <sounds name="day12">
       <sound>sound\snd_CM_12</sound>
       <sound>sound\snd_flutesolo12</sound>
@@ -32,15 +36,23 @@
     </sounds>
   </sounds>
   <sprites name="sprites">
-    <sprite>sprites\s_playerStand_red</sprite>
-    <sprite>sprites\s_playerWalk_red</sprite>
-    <sprite>sprites\s_playerJump_red</sprite>
-    <sprite>sprites\s_playerStand_grey</sprite>
-    <sprite>sprites\s_playerSleep_grey</sprite>
-    <sprite>sprites\s_npc_orange</sprite>
-    <sprite>sprites\s_npc_portrait_orange</sprite>
-    <sprite>sprites\s_npc_grey</sprite>
-    <sprite>sprites\s_npc_portrait_grey</sprite>
+    <sprites name="player">
+      <sprite>sprites\s_playerStand_red</sprite>
+      <sprite>sprites\s_playerWalk_red</sprite>
+      <sprite>sprites\s_playerJump_red</sprite>
+      <sprite>sprites\s_playerStand_grey</sprite>
+      <sprite>sprites\s_playerSleep_grey</sprite>
+      <sprite>sprites\s_playerRide_grey</sprite>
+    </sprites>
+    <sprites name="npc">
+      <sprite>sprites\s_npc_orange</sprite>
+      <sprite>sprites\s_npc_portrait_orange</sprite>
+      <sprite>sprites\s_npc_grey</sprite>
+      <sprite>sprites\s_npc_portrait_grey</sprite>
+    </sprites>
+    <sprite>sprites\s_frogEnemy</sprite>
+    <sprite>sprites\s_teleport</sprite>
+    <sprite>sprites\s_frogFriend</sprite>
     <sprites name="prev">
       <sprites name="day13">
         <sprite>sprites\s_greyNpcPortrait13</sprite>
@@ -127,9 +139,12 @@
         <sprite>sprites\s_blueWitchPose1</sprite>
       </sprites>
     </sprites>
+    <sprite>sprites\s_checkpoint</sprite>
+    <sprite>sprites\s_deathTile</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_overlay</background>
+    <background>background\bg_overlay_new</background>
     <background>background\bg_ts_dungeon_grey</background>
     <background>background\bg_ts_dungeon_green</background>
     <backgrounds name="prev">
@@ -153,8 +168,31 @@
     <script>scripts\script_horizontalCollisions.gml</script>
     <script>scripts\script_verticalCollisions.gml</script>
     <script>scripts\script_split.gml</script>
-    <scripts name="npc_scripts">
-      <script>scripts\script_introToOverworld.gml</script>
+    <scripts name="player_scripts">
+      <script>scripts\script_playerStep.gml</script>
+      <scripts name="platformer">
+        <script>scripts\script_playerPlatformerStep.gml</script>
+        <script>scripts\script_playerPlatformerInput.gml</script>
+      </scripts>
+      <scripts name="rpg">
+        <script>scripts\script_playerRpgStep.gml</script>
+        <script>scripts\script_playerRpgInput.gml</script>
+        <script>scripts\script_updatePlayerSpriteRpg.gml</script>
+      </scripts>
+      <scripts name="misc">
+        <script>scripts\script_playerSleepingStep.gml</script>
+        <script>scripts\script_playerRidingStep.gml</script>
+      </scripts>
+    </scripts>
+    <scripts name="physics">
+      <scripts name="platformer">
+        <script>scripts\script_platformerPhysics.gml</script>
+        <script>scripts\script_initPhysicsVariables.gml</script>
+      </scripts>
+    </scripts>
+    <scripts name="story_scripts">
+      <script>scripts\script_startWakingUp.gml</script>
+      <script>scripts\script_introWakeUp.gml</script>
     </scripts>
     <scripts name="prev">
       <script>scripts\script_teleport_playerRpgToPlatformer13.gml</script>
@@ -182,11 +220,24 @@
     <objects name="player">
       <object>objects\o_player</object>
     </objects>
+    <objects name="invisible_objects">
+      <object>objects\o_camera</object>
+      <object>objects\o_teleport</object>
+      <object>objects\o_ambience</object>
+    </objects>
+    <objects name="physics tiles">
+      <object>objects\o_solid</object>
+      <object>objects\o_water</object>
+    </objects>
+    <object>objects\o_physicsObject</object>
+    <object>objects\o_deathObj</object>
+    <objects name="enemies">
+      <object>objects\o_enemy</object>
+      <object>objects\o_frogEnemy</object>
+    </objects>
     <object>objects\o_npc</object>
-    <object>objects\o_camera</object>
-    <object>objects\o_teleport</object>
-    <object>objects\o_ambience</object>
-    <object>objects\o_solid</object>
+    <object>objects\o_checkpoint</object>
+    <object>objects\o_frogFriend</object>
     <objects name="prev">
       <objects name="day13">
         <object>objects\o_npc13</object>
@@ -264,8 +315,8 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\room15</room>
     <room>rooms\rm_intro</room>
-    <room>rooms\rm_overworld</room>
     <rooms name="prev">
       <room>rooms\rm13</room>
       <room>rooms\rm_soundtest_12</room>

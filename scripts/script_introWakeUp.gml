@@ -3,6 +3,3 @@
 
 o_player.mode = "sleeping";
 o_player.stopTimer = 240;
-o_player.x = 200;
-o_player.y = 192;
-room_goto(rm_overworld);

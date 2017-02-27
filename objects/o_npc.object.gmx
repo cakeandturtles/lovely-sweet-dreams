@@ -33,6 +33,7 @@ lb = 12;
 rb = 12;
 tb = 12;
 bb = 12;
+timer = 0;
 
 just_talked_timer = 0;
 </string>
@@ -61,7 +62,8 @@ mytext0 = "hey, you finally woke up.^i thought you'd never *wake *up";
 mytext1 = ""
 mytext = mytext0;
 mysound = snd_blue1;
-myscript = nullscript;
+myscript_start = nullscript;
+myscript_end = nullscript;
 
 mycolor = "grey";
 </string>
@@ -88,24 +90,31 @@ mycolor = "grey";
             <kind>1</kind>
             <string>var peri = 1;
 mytext = mytext0;
+
+// If I'm touching the player
 if (collision_rectangle(
         x-lb-peri,y-tb-peri,x+rb+peri,y+bb+peri, 
         myplayer, false, true)) {
-    if (touching_player || just_talked_timer &lt;= 0 || keyboard_check_pressed(global.INPUT_DOWN)) {
-        if (!touching_player) {
-            myplayer.stopTimer = 30;
-            audio_play_sound(mysound, 1, false);
-        }
+
+    // and I wasn't previously touching the player
+    if (!touching_player) {
+        // stop the player, play a "talking" sound, and execute my "start" script"
+        myplayer.stopTimer = 30;
+        audio_play_sound(mysound, 1, false);
+        script_execute(myscript_start);
     }
+    // remember that I was touching the player...
     touching_player = true;
-    just_talked_timer = 60;
-} else {
+} 
+// If I'm no longer touching the player
+else {
+    // and if I was just touching the player
     if (touching_player) {
-        script_execute(myscript);
+        // execute my "end" script
+        script_execute(myscript_end);
     }
+    // remember that I wasn't touching the player
     touching_player = false;
-    if (just_talked_timer &gt;= 0)
-        just_talked_timer--;
 }
 </string>
           </argument>
