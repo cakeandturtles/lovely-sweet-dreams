@@ -38,4 +38,11 @@ if (stopTimer <= 0) {
         grav = grav_normal;
         terminal_yvel = terminal_yvel_normal;
     }
+    
+    // Pressing down
+    if (keyboard_check(global.INPUT_DOWN)) {
+        self.down = true;
+    } else {
+        self.down = false;
+    }
 }

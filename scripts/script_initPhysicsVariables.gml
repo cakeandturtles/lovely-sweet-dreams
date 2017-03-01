@@ -16,6 +16,8 @@ self.jump_yvel = -5;
 self.on_ground = false;
 self.was_on_ground = false;
 
+self.down = false;
+
 // collision bounds
 self.tb = 8;
 self.lb = 8;

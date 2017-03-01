@@ -21,6 +21,9 @@ on_ground = false;
 
 // vertical collision
 script_verticalCollisions(o_solid);
+if (!self.down) {
+    script_topCollisions(o_topSolid);
+}
 script_verticalCollisions(argument0);
 script_verticalCollisions(argument1);
 script_verticalCollisions(argument2);

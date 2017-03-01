@@ -36,6 +36,7 @@
     </sounds>
   </sounds>
   <sprites name="sprites">
+    <sprite>sprites\s_topSolidMask</sprite>
     <sprites name="player">
       <sprite>sprites\s_playerStand_red</sprite>
       <sprite>sprites\s_playerWalk_red</sprite>
@@ -45,14 +46,19 @@
       <sprite>sprites\s_playerRide_grey</sprite>
     </sprites>
     <sprites name="npc">
+      <sprite>sprites\s_npc</sprite>
       <sprite>sprites\s_npc_orange</sprite>
       <sprite>sprites\s_npc_portrait_orange</sprite>
       <sprite>sprites\s_npc_grey</sprite>
       <sprite>sprites\s_npc_portrait_grey</sprite>
+      <sprite>sprites\s_npcMardigras</sprite>
     </sprites>
     <sprite>sprites\s_frogEnemy</sprite>
     <sprite>sprites\s_teleport</sprite>
     <sprite>sprites\s_frogFriend</sprite>
+    <sprite>sprites\s_checkpoint</sprite>
+    <sprite>sprites\s_deathTile</sprite>
+    <sprite>sprites\s_item_mardigras</sprite>
     <sprites name="prev">
       <sprites name="day13">
         <sprite>sprites\s_greyNpcPortrait13</sprite>
@@ -139,8 +145,7 @@
         <sprite>sprites\s_blueWitchPose1</sprite>
       </sprites>
     </sprites>
-    <sprite>sprites\s_checkpoint</sprite>
-    <sprite>sprites\s_deathTile</sprite>
+    <sprite>sprites\s_mushrooms</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_overlay</background>
@@ -161,12 +166,14 @@
       <background>background\bg_overlay13</background>
       <background>background\bg_tileset_green13</background>
     </backgrounds>
+    <background>background\bg_card_overlay</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\nullscript.gml</script>
     <script>scripts\script_horizontalCollisions.gml</script>
     <script>scripts\script_verticalCollisions.gml</script>
+    <script>scripts\script_topCollisions.gml</script>
     <script>scripts\script_split.gml</script>
     <scripts name="player_scripts">
       <script>scripts\script_playerStep.gml</script>
@@ -227,6 +234,7 @@
     </objects>
     <objects name="physics tiles">
       <object>objects\o_solid</object>
+      <object>objects\o_topSolid</object>
       <object>objects\o_water</object>
     </objects>
     <object>objects\o_physicsObject</object>
@@ -313,10 +321,13 @@
         <object>objects\o_blueWitch1</object>
       </objects>
     </objects>
+    <object>objects\o_npc_mardigras</object>
+    <object>objects\o_sprite</object>
+    <object>objects\o_item</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room15</room>
-    <room>rooms\rm_intro</room>
+    <room>rooms\rm_card</room>
+    <room>rooms\rm_frogSkater</room>
     <rooms name="prev">
       <room>rooms\rm13</room>
       <room>rooms\rm_soundtest_12</room>
