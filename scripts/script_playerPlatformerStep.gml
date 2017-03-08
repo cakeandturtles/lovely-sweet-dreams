@@ -16,14 +16,3 @@ if (killer) {
         }
     }
 }
-
-// update player sprite
-
-// set sprite_index based on state
-if (!on_ground) {
-    sprite_index = asset_get_index(plat_jump_sprite + self.color);
-} else if (horizontal_input) {
-    sprite_index = asset_get_index(plat_walk_sprite + self.color);
-} else {
-    sprite_index = asset_get_index(plat_stand_sprite + self.color);
-}

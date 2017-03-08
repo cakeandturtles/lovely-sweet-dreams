@@ -38,15 +38,13 @@
   <sprites name="sprites">
     <sprite>sprites\s_topSolidMask</sprite>
     <sprites name="player">
-      <sprite>sprites\s_playerStand_red</sprite>
-      <sprite>sprites\s_playerWalk_red</sprite>
-      <sprite>sprites\s_playerJump_red</sprite>
-      <sprite>sprites\s_playerStand_grey</sprite>
+      <sprite>sprites\s_player_grey</sprite>
+      <sprite>sprites\s_player_red</sprite>
       <sprite>sprites\s_playerSleep_grey</sprite>
       <sprite>sprites\s_playerRide_grey</sprite>
     </sprites>
+    <sprite>sprites\s_playerTransform</sprite>
     <sprites name="npc">
-      <sprite>sprites\s_npc</sprite>
       <sprite>sprites\s_npc_orange</sprite>
       <sprite>sprites\s_npc_portrait_orange</sprite>
       <sprite>sprites\s_npc_grey</sprite>
@@ -146,8 +144,10 @@
       </sprites>
     </sprites>
     <sprite>sprites\s_mushrooms</sprite>
+    <sprite>sprites\sprite78</sprite>
   </sprites>
   <backgrounds name="background">
+    <background>background\bg_card_overlay</background>
     <background>background\bg_overlay</background>
     <background>background\bg_overlay_new</background>
     <background>background\bg_ts_dungeon_grey</background>
@@ -166,7 +166,6 @@
       <background>background\bg_overlay13</background>
       <background>background\bg_tileset_green13</background>
     </backgrounds>
-    <background>background\bg_card_overlay</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -180,6 +179,7 @@
       <scripts name="platformer">
         <script>scripts\script_playerPlatformerStep.gml</script>
         <script>scripts\script_playerPlatformerInput.gml</script>
+        <script>scripts\script_playerPlatformerRender.gml</script>
       </scripts>
       <scripts name="rpg">
         <script>scripts\script_playerRpgStep.gml</script>
@@ -224,10 +224,8 @@
     <font>fonts\font_1</font>
   </fonts>
   <objects name="objects">
-    <objects name="player">
-      <object>objects\o_player</object>
-    </objects>
-    <objects name="invisible_objects">
+    <object>objects\o_player</object>
+    <objects name="controllers">
       <object>objects\o_camera</object>
       <object>objects\o_teleport</object>
       <object>objects\o_ambience</object>
@@ -237,8 +235,10 @@
       <object>objects\o_topSolid</object>
       <object>objects\o_water</object>
     </objects>
-    <object>objects\o_physicsObject</object>
-    <object>objects\o_deathObj</object>
+    <objects name="parents">
+      <object>objects\o_physicsObject</object>
+      <object>objects\o_deathObj</object>
+    </objects>
     <objects name="enemies">
       <object>objects\o_enemy</object>
       <object>objects\o_frogEnemy</object>
@@ -246,6 +246,8 @@
     <object>objects\o_npc</object>
     <object>objects\o_checkpoint</object>
     <object>objects\o_frogFriend</object>
+    <object>objects\o_sprite</object>
+    <object>objects\o_item</object>
     <objects name="prev">
       <objects name="day13">
         <object>objects\o_npc13</object>
@@ -321,9 +323,6 @@
         <object>objects\o_blueWitch1</object>
       </objects>
     </objects>
-    <object>objects\o_npc_mardigras</object>
-    <object>objects\o_sprite</object>
-    <object>objects\o_item</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_card</room>

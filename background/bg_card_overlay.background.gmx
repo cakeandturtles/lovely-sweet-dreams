@@ -13,7 +13,7 @@
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>128</width>
-  <height>128</height>
+  <width>144</width>
+  <height>144</height>
   <data>images\bg_card_overlay.png</data>
 </background>
