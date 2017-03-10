@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>/// init variables
-touching_player = false;
+self.is_talking = false;
 state = 0;
 image_speed = 0.1;
 lb = 12;
@@ -61,14 +61,17 @@ text_counter_counter_step = 5;
             <kind>1</kind>
             <string>/// room creation code magic
 myplayer = o_player;
-mytext0 = "hey^testing";
-mytext1 = ""
-mytext = mytext0;
+
 mysound = snd_blue1;
 myscript_start = nullscript;
 myscript_end = nullscript;
 
 mycolor = "orange";
+
+self.monologue[0] = "hey^testing";
+self.monologue[1] = "you were all i ever wanted.^i think i'll regret this";
+self.curr_line = 0;
+self.is_talking = false;
 </string>
           </argument>
         </arguments>
@@ -92,39 +95,59 @@ mycolor = "orange";
           <argument>
             <kind>1</kind>
             <string>var peri = 1;
-mytext = mytext0;
 
 // If I'm touching the player
 if (collision_rectangle(
         x-lb-peri,y-tb-peri,x+rb+peri,y+bb+peri, 
         myplayer, false, true)) {
-
-    // and I wasn't previously touching the player
-    if (!touching_player) {
-        // stop the player, play a "talking" sound, and execute my "start" script"
-        myplayer.stopTimer = 30;
-        audio_play_sound(mysound, 1, false);
-        script_execute(myscript_start);
-        text_counter = 0;
-        text_counter_counter = 0;
+        
+    if (keyboard_check_pressed(global.INPUT_ACTION)) {
+        // start the conversation
+        if (not self.is_talking) {
+            // play a "talking" sound, and execute my "start" script"
+            audio_play_sound(self.mysound, 1, false);
+            script_execute(self.myscript_start);
+            self.text_counter = 0;
+            self.text_counter_counter = 0;
+            self.curr_line = 0;
+            
+            self.is_talking = true;
+        }
+        // continue or end the conversation
+        else if (self.is_talking) {
+            // finish the line if i haven't finished yet.
+            if (not script_hasFinishedLine()) {
+                self.text_counter = 9999;
+            }
+            // continue the conversation if there's more of the monologue left
+            else if (self.curr_line+1 &lt; array_length_1d(self.monologue)) {
+                self.text_counter = 0;
+                self.text_counter_counter = 0;
+                
+                self.curr_line += 1;
+            }
+            // end the conversation if my monologue is over
+            else {
+                // execute my "end" script
+                script_execute(self.myscript_end);
+                
+                self.is_talking = false;
+            }
+        }
     }
-    // remember that I was touching the player...
-    touching_player = true;
-    text_counter_counter += 1;
-    if (text_counter_counter &gt;= text_counter_counter_step) {
-        text_counter_counter = 0;
-        text_counter += 1;
+    
+    // happens continuously if the npc is "talking"
+    if (self.is_talking) {
+        // stop the player
+        myplayer.stopTimer = 10;
+        
+        // increment the text for a single dialog box
+        text_counter_counter += 1;
+        if (text_counter_counter &gt;= text_counter_counter_step) {
+            text_counter_counter = 0;
+            text_counter += 1;
+        }
     }
-} 
-// If I'm no longer touching the player
-else {
-    // and if I was just touching the player
-    if (touching_player) {
-        // execute my "end" script
-        script_execute(myscript_end);
-    }
-    // remember that I wasn't touching the player
-    touching_player = false;
 }
 </string>
           </argument>
@@ -149,24 +172,31 @@ else {
           <argument>
             <kind>1</kind>
             <string>/// draw text
-if (touching_player) {
+if (self.is_talking) {
+    var text_y = view_hport[0] - 128;
+    
+    var player_gui_y = myplayer.y - view_yview[0];
+    if (player_gui_y &gt; 96)
+        text_y = 28;
+
     draw_set_colour(c_white);
-    draw_rectangle(14, 358, 628, 832, false);
+    draw_rectangle(14, text_y - 18, view_wport[0] - 14, text_y + 128 - 14, false);
     
     draw_set_colour(c_black);
-    draw_rectangle(16, 360, 624, 828, false);
+    draw_rectangle(16, text_y - 16, view_wport[0] - 16, text_y + 128 - 16, false);
     var portrait = asset_get_index("s_npc_portrait_" + mycolor);
-    draw_sprite_stretched(portrait, 0, 32, 380, 96, 96);
+    draw_sprite_stretched(portrait, 0, 32, text_y, 96, 96);
     draw_set_colour(c_white);
     draw_set_font(font_7);
-    var text_arr = script_split5(self.mytext,"^");
+    
+    var text_arr = script_split(self.monologue[self.curr_line],"^");
     var count = 0;
     for (var i = 0; i &lt; array_length_1d(text_arr); i++) {
         if (i + count &gt; self.text_counter) break;
         var adjusted_count = self.text_counter - count;
         var text_substr = string_copy(text_arr[i], 1, adjusted_count);
         count += string_length(text_arr[i]);
-        draw_text(144, 364+(32*i), text_substr);
+        draw_text(144, text_y - 8 + (32*i), text_substr);
     }
 }
 </string>

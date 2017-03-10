@@ -100,6 +100,7 @@
     <instance objName="o_solid" x="32" y="136" name="inst_887D6D48" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_solid" x="16" y="128" name="inst_4DA09F97" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_solid" x="8" y="112" name="inst_4DD0BD55" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_input" x="40" y="8" name="inst_B004CE6B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_ts_dungeon_grey" x="0" y="0" w="8" h="8" xo="0" yo="8" id="10006097" name="inst_A9A6A3AA" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

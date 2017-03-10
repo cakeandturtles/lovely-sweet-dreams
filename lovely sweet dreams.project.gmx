@@ -51,12 +51,17 @@
       <sprite>sprites\s_npc_portrait_grey</sprite>
       <sprite>sprites\s_npcMardigras</sprite>
     </sprites>
+    <sprites name="controllers">
+      <sprite>sprites\s_inputController</sprite>
+      <sprite>sprites\s_cameraController</sprite>
+    </sprites>
     <sprite>sprites\s_frogEnemy</sprite>
     <sprite>sprites\s_teleport</sprite>
     <sprite>sprites\s_frogFriend</sprite>
     <sprite>sprites\s_checkpoint</sprite>
     <sprite>sprites\s_deathTile</sprite>
     <sprite>sprites\s_item_mardigras</sprite>
+    <sprite>sprites\s_mushrooms</sprite>
     <sprites name="prev">
       <sprites name="day13">
         <sprite>sprites\s_greyNpcPortrait13</sprite>
@@ -143,8 +148,6 @@
         <sprite>sprites\s_blueWitchPose1</sprite>
       </sprites>
     </sprites>
-    <sprite>sprites\s_mushrooms</sprite>
-    <sprite>sprites\sprite78</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_card_overlay</background>
@@ -218,6 +221,7 @@
         <script>scripts\script_drawSurroundingRect3.gml</script>
       </scripts>
     </scripts>
+    <script>scripts\script_hasFinishedLine.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_7</font>
@@ -229,6 +233,7 @@
       <object>objects\o_camera</object>
       <object>objects\o_teleport</object>
       <object>objects\o_ambience</object>
+      <object>objects\o_input</object>
     </objects>
     <objects name="physics tiles">
       <object>objects\o_solid</object>
