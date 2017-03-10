@@ -39,6 +39,7 @@
     <sprite>sprites\s_topSolidMask</sprite>
     <sprites name="player">
       <sprite>sprites\s_player_grey</sprite>
+      <sprite>sprites\s_player_green</sprite>
       <sprite>sprites\s_player_red</sprite>
       <sprite>sprites\s_playerSleep_grey</sprite>
       <sprite>sprites\s_playerRide_grey</sprite>
@@ -151,9 +152,9 @@
   </sprites>
   <backgrounds name="background">
     <background>background\bg_card_overlay</background>
-    <background>background\bg_overlay</background>
-    <background>background\bg_overlay_new</background>
+    <background>background\bg_ts_dungeon</background>
     <background>background\bg_ts_dungeon_grey</background>
+    <background>background\bg_ts_dungeon_red</background>
     <background>background\bg_ts_dungeon_green</background>
     <backgrounds name="prev">
       <background>background\bg_8</background>
@@ -168,6 +169,8 @@
       <background>background\bg_dgwar13</background>
       <background>background\bg_overlay13</background>
       <background>background\bg_tileset_green13</background>
+      <background>background\bg_overlay</background>
+      <background>background\bg_overlay_new</background>
     </backgrounds>
   </backgrounds>
   <paths name="paths"/>
@@ -177,6 +180,11 @@
     <script>scripts\script_verticalCollisions.gml</script>
     <script>scripts\script_topCollisions.gml</script>
     <script>scripts\script_split.gml</script>
+    <scripts name="glitch">
+      <script>scripts\script_glitch_green.gml</script>
+      <script>scripts\script_glitch_grey.gml</script>
+      <script>scripts\script_glitch_red.gml</script>
+    </scripts>
     <scripts name="player_scripts">
       <script>scripts\script_playerStep.gml</script>
       <scripts name="platformer">

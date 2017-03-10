@@ -105,6 +105,9 @@ if (collision_rectangle(
         // start the conversation
         if (not self.is_talking) {
             // play a "talking" sound, and execute my "start" script"
+            
+                script_glitch_green();
+                
             audio_play_sound(self.mysound, 1, false);
             script_execute(self.myscript_start);
             self.text_counter = 0;
@@ -125,6 +128,8 @@ if (collision_rectangle(
                 self.text_counter_counter = 0;
                 
                 self.curr_line += 1;
+                
+                    script_glitch_red();
             }
             // end the conversation if my monologue is over
             else {
@@ -132,6 +137,8 @@ if (collision_rectangle(
                 script_execute(self.myscript_end);
                 
                 self.is_talking = false;
+                
+                    script_glitch_grey();
             }
         }
     }
