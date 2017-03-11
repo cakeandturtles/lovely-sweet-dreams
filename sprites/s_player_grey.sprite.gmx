@@ -27,5 +27,6 @@
     <frame index="4">images\s_player_grey_4.png</frame>
     <frame index="5">images\s_player_grey_5.png</frame>
     <frame index="6">images\s_player_grey_6.png</frame>
+    <frame index="7">images\s_player_grey_7.png</frame>
   </frames>
 </sprite>

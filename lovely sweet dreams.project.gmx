@@ -47,6 +47,7 @@
     <sprite>sprites\s_playerTransform</sprite>
     <sprites name="npc">
       <sprite>sprites\s_npc_orange</sprite>
+      <sprite>sprites\s_ghost</sprite>
       <sprite>sprites\s_npc_portrait_orange</sprite>
       <sprite>sprites\s_npc_grey</sprite>
       <sprite>sprites\s_npc_portrait_grey</sprite>
@@ -190,7 +191,9 @@
       <scripts name="platformer">
         <script>scripts\script_playerPlatformerStep.gml</script>
         <script>scripts\script_playerPlatformerInput.gml</script>
+        <script>scripts\script_playerGhostCooldown.gml</script>
         <script>scripts\script_playerPlatformerRender.gml</script>
+        <script>scripts\script_fireGhost.gml</script>
       </scripts>
       <scripts name="rpg">
         <script>scripts\script_playerRpgStep.gml</script>
@@ -260,7 +263,6 @@
     <object>objects\o_checkpoint</object>
     <object>objects\o_frogFriend</object>
     <object>objects\o_sprite</object>
-    <object>objects\o_item</object>
     <objects name="prev">
       <objects name="day13">
         <object>objects\o_npc13</object>
@@ -336,6 +338,8 @@
         <object>objects\o_blueWitch1</object>
       </objects>
     </objects>
+    <object>objects\o_item</object>
+    <object>objects\o_ghost</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_card</room>

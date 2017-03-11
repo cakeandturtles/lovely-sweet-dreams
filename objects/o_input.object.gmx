@@ -30,6 +30,7 @@ global.INPUT_DOWN = vk_down;
 global.INPUT_UP = vk_up;
 global.INPUT_LEFT = vk_left;
 global.INPUT_RIGHT = vk_right;
+global.INPUT_SPACE = vk_space;
 
 global.INPUT_X = ord('X');
 global.INPUT_Z = ord('Z');
@@ -37,6 +38,7 @@ global.INPUT_Z = ord('Z');
 
 // masks
 global.INPUT_ACTION = global.INPUT_X;
+global.INPUT_JUMP = global.INPUT_SPACE;
 </string>
           </argument>
         </arguments>

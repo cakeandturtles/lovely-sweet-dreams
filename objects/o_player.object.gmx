@@ -40,40 +40,18 @@
           <argument>
             <kind>1</kind>
             <string>/// Init variables
-stopTimer = 0;
-vertical_input = false;
-horizontal_input = false;
+self.stopTimer = 0;
+self.vertical_input = false;
+self.horizontal_input = false;
 
-mode = "platformer";
-image_speed = 0.15;
+self.mode = "platformer";
+self.image_speed = 0.15;
 
-mount = noone;
+self.mount = noone;
+self.ghostCooldown = 0;
+self.ghostAnimationLag = 0;
 
-color = "grey";
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// platformer specific variables
-plat_stand_sprite = "s_playerStand_";
-plat_walk_sprite = "s_playerWalk_";
-plat_jump_sprite = "s_playerJump_";
+self.color = "grey";
 </string>
           </argument>
         </arguments>

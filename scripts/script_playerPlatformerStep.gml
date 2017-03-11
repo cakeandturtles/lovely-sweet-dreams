@@ -1,5 +1,10 @@
 /// script_playerPlatformerStep() call other platformer step scripts
+
 script_playerPlatformerInput();
+script_playerGhostCooldown();
+if (self.on_ground)
+    xacc = 0.5;
+else xacc = 0.1;
 script_platformerPhysics(noone, noone, noone, noone, noone);
 
 // TRY TO COLLIDE WITH DEATH OBJECTS!!!

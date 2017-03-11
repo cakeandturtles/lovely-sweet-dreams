@@ -7,7 +7,7 @@ self.xvel = 0;
 self.yvel = 0;
 
 self.xacc = 0.1;
-self.terminal_xvel = 3;
+self.terminal_xvel = 2;
 
 // platformer specific variables
 self.grav = 0.5;
