@@ -1,5 +1,7 @@
 /// script_initPhysicsVariables() init physics variables
 
+self.color = "grey";
+
 // movement variables
 self.xpos = x;
 self.ypos = y;

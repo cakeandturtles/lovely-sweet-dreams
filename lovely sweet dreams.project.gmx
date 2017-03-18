@@ -11,6 +11,7 @@
     <sound>sound\snd_checkpoint</sound>
     <sound>sound\snd_frogskater_song</sound>
     <sound>sound\snd_ridefrog</sound>
+    <sound>sound\snd_glitch</sound>
     <sounds name="day12">
       <sound>sound\snd_CM_12</sound>
       <sound>sound\snd_flutesolo12</sound>
@@ -36,7 +37,6 @@
     </sounds>
   </sounds>
   <sprites name="sprites">
-    <sprite>sprites\s_topSolidMask</sprite>
     <sprites name="player">
       <sprite>sprites\s_player_grey</sprite>
       <sprite>sprites\s_player_green</sprite>
@@ -52,13 +52,20 @@
       <sprite>sprites\s_npc_grey</sprite>
       <sprite>sprites\s_npc_portrait_grey</sprite>
       <sprite>sprites\s_npcMardigras</sprite>
+      <sprite>sprites\s_egg</sprite>
     </sprites>
     <sprites name="controllers">
       <sprite>sprites\s_inputController</sprite>
       <sprite>sprites\s_cameraController</sprite>
+      <sprite>sprites\s_teleport</sprite>
+    </sprites>
+    <sprites name="masks">
+      <sprite>sprites\s_topSolidMask</sprite>
+      <sprite>sprites\s_solidMask16x16</sprite>
+      <sprite>sprites\s_solidMask8x8</sprite>
     </sprites>
     <sprite>sprites\s_frogEnemy</sprite>
-    <sprite>sprites\s_teleport</sprite>
+    <sprite>sprites\s_redSpell</sprite>
     <sprite>sprites\s_frogFriend</sprite>
     <sprite>sprites\s_checkpoint</sprite>
     <sprite>sprites\s_deathTile</sprite>
@@ -154,9 +161,11 @@
   <backgrounds name="background">
     <background>background\bg_card_overlay</background>
     <background>background\bg_ts_dungeon</background>
-    <background>background\bg_ts_dungeon_grey</background>
-    <background>background\bg_ts_dungeon_red</background>
-    <background>background\bg_ts_dungeon_green</background>
+    <backgrounds name="colors_DONTUSEFORROOMEDIT">
+      <background>background\bg_ts_dungeon_grey</background>
+      <background>background\bg_ts_dungeon_green</background>
+      <background>background\bg_ts_dungeon_red</background>
+    </backgrounds>
     <backgrounds name="prev">
       <background>background\bg_8</background>
       <background>background\bg_overworld_tileset_6</background>
@@ -207,8 +216,11 @@
     </scripts>
     <scripts name="physics">
       <scripts name="platformer">
-        <script>scripts\script_platformerPhysics.gml</script>
         <script>scripts\script_initPhysicsVariables.gml</script>
+        <script>scripts\script_jump.gml</script>
+        <script>scripts\script_stopX.gml</script>
+        <script>scripts\script_platformerPhysics.gml</script>
+        <script>scripts\script_fallOffGround.gml</script>
       </scripts>
     </scripts>
     <scripts name="story_scripts">
@@ -248,6 +260,7 @@
     </objects>
     <objects name="physics tiles">
       <object>objects\o_solid</object>
+      <object>objects\o_solidSmall</object>
       <object>objects\o_topSolid</object>
       <object>objects\o_water</object>
     </objects>
@@ -259,10 +272,16 @@
       <object>objects\o_enemy</object>
       <object>objects\o_frogEnemy</object>
     </objects>
-    <object>objects\o_npc</object>
+    <objects name="npc">
+      <object>objects\o_npc</object>
+      <object>objects\o_eggNpc</object>
+    </objects>
     <object>objects\o_checkpoint</object>
     <object>objects\o_frogFriend</object>
     <object>objects\o_sprite</object>
+    <object>objects\o_item</object>
+    <object>objects\o_ghost</object>
+    <object>objects\o_redSpell</object>
     <objects name="prev">
       <objects name="day13">
         <object>objects\o_npc13</object>
@@ -338,8 +357,6 @@
         <object>objects\o_blueWitch1</object>
       </objects>
     </objects>
-    <object>objects\o_item</object>
-    <object>objects\o_ghost</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_card</room>

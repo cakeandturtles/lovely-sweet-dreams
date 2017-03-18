@@ -16,8 +16,8 @@ if (!on_ground) {
         yvel = terminal_yvel;
     }
 }
-was_on_ground = on_ground;
-on_ground = false;
+
+script_fallOffGround();
 
 // vertical collision
 script_verticalCollisions(o_solid);

@@ -15,31 +15,17 @@ if (stopTimer <= 0) {
         horizontal_input = true;
         image_xscale = -1;
     } else {
-        if (xvel > 0){ 
-            xvel -= xacc;
-            if (xvel < 0) xvel = 0;
-        } else if (xvel < 0) {
-            xvel += xacc;
-            if (xvel > 0) xvel = 0;
-        }
+        script_stopX();
     }
     
     // fire ghosts
     if (keyboard_check_pressed(global.INPUT_X)) {
-        script_fireGhost(true);
+        //script_fireGhost(true);
     }
     
     // jump input
-    if (keyboard_check_pressed(global.INPUT_SPACE)) {
-        if (on_ground || place_meeting(x, y, o_water4)) {
-            if (on_ground) {
-                yvel = jump_yvel;
-                audio_play_sound(snd_jump, 1, false);
-            }
-            else if (place_meeting(x, y, o_water4)) {
-                yvel = jump_yvel+2;
-            }
-        }
+    if (keyboard_check_pressed(global.INPUT_JUMP)) {
+        script_jump();
     }
     
     // gravity manipulation
@@ -63,4 +49,9 @@ if (stopTimer <= 0) {
     } else {
         self.down = false;
     }
+    if (keyboard_check_pressed(global.INPUT_DOWN)) {
+        self.on_ground = false;
+    }
+} else {
+    script_stopX();
 }

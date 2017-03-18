@@ -38,7 +38,7 @@ global.INPUT_Z = ord('Z');
 
 // masks
 global.INPUT_ACTION = global.INPUT_X;
-global.INPUT_JUMP = global.INPUT_SPACE;
+global.INPUT_JUMP = global.INPUT_UP;
 </string>
           </argument>
         </arguments>

@@ -60,13 +60,14 @@ text_counter_counter_step = 5;
           <argument>
             <kind>1</kind>
             <string>/// room creation code magic
-myplayer = o_player;
+self.myplayer = o_player;
 
-mysound = snd_blue1;
-myscript_start = nullscript;
-myscript_end = nullscript;
+self.mysound = snd_blue1;
+self.myscript_start = nullscript;
+self.myscript_end = nullscript;
 
-mycolor = "orange";
+self.color = "orange";
+self.portrait = "s_npc_portrait_";
 
 self.monologue[0] = "hey^testing";
 self.monologue[1] = "you were all i ever wanted.^i think i'll regret this";
@@ -191,7 +192,7 @@ if (self.is_talking) {
     
     draw_set_colour(c_black);
     draw_rectangle(16, text_y - 16, view_wport[0] - 16, text_y + 128 - 16, false);
-    var portrait = asset_get_index("s_npc_portrait_" + mycolor);
+    var portrait = asset_get_index(self.portrait + self.color);
     draw_sprite_stretched(portrait, 0, 32, text_y, 96, 96);
     draw_set_colour(c_white);
     draw_set_font(font_7);
